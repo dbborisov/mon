@@ -15,14 +15,17 @@ import java.util.List;
 @NoArgsConstructor
 public class SucardInstance  extends BaseEntity{
 
-    @Column(name = "name",nullable = false, unique = true,updatable = false)
+    @Column(name = "name")
     private String name;
-    @Column(name = "connection_Configuration",nullable = false, unique = true,updatable = false)
+    @Column(name = "connection_Configuration")
     private String connectionConfiguration;
 
-    @OneToMany(mappedBy = "id", targetEntity = SqlScript.class,
+    @OneToMany(mappedBy = "sucardInstance", targetEntity = SqlScript.class,
             fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<SqlScript> sqlScriptList;
+
+    @ManyToOne
+    private User user;
 
 
 

@@ -5,9 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "sql_script")
@@ -15,11 +13,14 @@ import javax.persistence.Table;
 @Setter
 @NoArgsConstructor
 public class SqlScript extends BaseEntity {
-    @Column(name = "viewName",nullable = false, unique = true,updatable = false)
+    @Column(name = "viewName")
     private String viewName;
 
-    @Column(name = "script", unique = true)
+    @Column(name = "script")
     private String script;
+
+    @ManyToOne
+    SucardInstance sucardInstance;
 
 
 }

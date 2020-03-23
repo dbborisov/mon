@@ -1,25 +1,18 @@
 package monitoring.application.app.web.model.post_model;
 
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
+@AllArgsConstructor
 @NoArgsConstructor
-//@RequiredArgsConstructor
-public class SucardInstancePostModel {
-
-
-
-    private String name;
-
-    private String connectionConfiguration;
+public class UserPostModel {
 
     private String username;
 
-    private long user;
-
-
+    private String password;
 }
